@@ -1,42 +1,43 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Inventory", menuName = "Scriptable Objects/Inventory")]
 public class Inventory : ScriptableObject
 {
-    public interface Item
-    {
-
-    }
-
     [System.Serializable]
-    public struct BackpackSpace
+    struct inventoryItems
     {
-        public Item item;
+        public List<Slot> slots;
     }
 
-    [SerializeField] int maxCapacity;
-    [SerializeField]
-    List<BackpackSpace> backpack = new List<BackpackSpace>();
+    //fields
+    [HideInInspector]
+    public string inventoryPath;
+    [Tooltip("The slots in the inventory.")]
+    public List<Slot> slots = new List<Slot>();
 
-    public bool addToInventory(Item itemToAdd)
+    private void saveInventory()
     {
-        if(backpack.Count < maxCapacity) return false;
-        //if backpack is not full, create a space for the new item
-        BackpackSpace newSpace = new();
-        newSpace.item = itemToAdd;
-
-        //add the new item to the backpack
-        backpack.Add(newSpace);
-        return true;
+        string str = JsonUtility.ToJson(slots);
+        File.WriteAllText(inventoryPath, str);
     }
 
-    public void removeFromInventory(Item itemToRemove)
+    private void LoadInventory()
     {
-        BackpackSpace space = new();
-        space.item = itemToRemove;
-        //if the item to be removed is not in the backpack, return.
-        if (!backpack.Contains(space)) return;
-        backpack.Remove(space);
+        string str = File.ReadAllText(inventoryPath);
+        var inventoryItems = JsonUtility.FromJson<inventoryItems>(str);
+        slots = inventoryItems.slots;
+    }
+
+    private void OnEnable()
+    {
+        inventoryPath = Application.persistentDataPath + "/InventorySave";
+        saveInventory();
+    }
+
+    private void OnDisable()
+    {
+        saveInventory();
     }
 }
