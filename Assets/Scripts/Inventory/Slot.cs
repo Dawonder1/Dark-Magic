@@ -1,24 +1,33 @@
+using TMPro;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Slot", menuName = "Scriptable Objects/Slot")]
-public class Slot : ScriptableObject
+public class Slot : MonoBehaviour
 {
-    public Item slotItem;
+    public Item item;
+    [SerializeField] Sprite itemImage;
+    TextMeshProUGUI numOwnedText;
 
-    /*
-     * Item is a Monobehaviour, as such it is a component.
-     * The Item class can also be used to reference
-     * a gameobject or prefab in the scene or in the assets.
-     * This also allows us to use values from items without bothering
-     * where their data is coming from.
-    */
-
-
-    public void emptySlot()
+    private void OnEnable()
     {
-        //to be subscribed to the event that the item...
-        //finished in the equipment slot or is returned...
-        //or whatever
-        slotItem = null;
+        loadItem();
+        item.itemUsed += loadItem;
+    }
+
+    public void setItem(Item itemToSet)
+    {
+        item = itemToSet;
+        loadItem();
+    }
+
+    void loadItem()
+    {
+        itemImage = item.sprite;
+        GetComponent<SpriteRenderer>().sprite = itemImage;
+        numOwnedText.text = item.numOwned.ToString();
+    }
+
+    private void OnDisable()
+    {
+        item.itemUsed -= loadItem;
     }
 }

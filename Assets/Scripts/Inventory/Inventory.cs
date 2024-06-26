@@ -8,18 +8,22 @@ public class Inventory : ScriptableObject
     [System.Serializable]
     struct inventoryItems
     {
-        public List<Slot> slots;
+        public List<Item> items;
     }
+
+    public delegate void onInventoryChanged();
+    public event onInventoryChanged inventoryChanged;
 
     //fields
     [HideInInspector]
     public string inventoryPath;
-    [Tooltip("The slots in the inventory.")]
-    public List<Slot> slots = new List<Slot>();
+
+    [Tooltip("The items in the inventory")]
+    public List<Item> items = new List<Item>();
 
     private void saveInventory()
     {
-        string str = JsonUtility.ToJson(slots);
+        string str = JsonUtility.ToJson(items);
         File.WriteAllText(inventoryPath, str);
     }
 
@@ -27,7 +31,20 @@ public class Inventory : ScriptableObject
     {
         string str = File.ReadAllText(inventoryPath);
         var inventoryItems = JsonUtility.FromJson<inventoryItems>(str);
-        slots = inventoryItems.slots;
+        items = inventoryItems.items;
+    }
+
+    public void addToInventory(Item item)
+    {
+        if (items.Contains(item)) { item.numOwned++; }
+        else { items.Add(item); }
+        if(inventoryChanged != null) inventoryChanged();
+    }
+
+    public void removeFromInventory(Item item)
+    {
+        if (items.Contains(item)) { items.Remove(item); }
+        if (inventoryChanged != null) inventoryChanged();
     }
 
     private void OnEnable()

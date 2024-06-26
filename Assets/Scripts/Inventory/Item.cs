@@ -1,13 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-[System.Serializable]
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
+public class Item : ScriptableObject
 {
     public string _name;
-    //the name of an item is used to identify it.
-    //when searching for an item, it is advised to search by name.
+    public int value;
+    public Sprite sprite;
+    public GameObject prefab;
     public int numOwned;
-    public int numEquiped;
-    public int price;
-    public Sprite icon;
+    public delegate void onItemUsed();
+    public event onItemUsed itemUsed;
+
+    public void use()
+    {
+        numOwned = numOwned > 0 ? numOwned-- : numOwned;
+        itemUsed();
+    }
 }

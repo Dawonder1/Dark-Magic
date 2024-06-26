@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be124310c6003ea4d940743111390839, type: 3}
-  m_Name: Inventory
+  m_Script: {fileID: 11500000, guid: f7a975a1279f608488910c31e3462063, type: 3}
+  m_Name: Corruption Potion
   m_EditorClassIdentifier: 
-  inventoryPath: C:/Users/omotoso/AppData/LocalLow/DefaultCompany/Dark Magic/InventorySave
-  items:
-  - {fileID: 11400000, guid: 437de6a5cc65f9c459177e478397b195, type: 2}
+  _name: Corruption Potion
+  value: 20
+  sprite: {fileID: 0}
+  prefab: {fileID: 0}
+  numOwned: 0
