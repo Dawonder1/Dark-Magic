@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPath: C:/Users/omotoso/AppData/LocalLow/DefaultCompany/Dark Magic/InventorySave
   items:
+  - {fileID: 11400000, guid: c45954130c0d1764796f1e3a5ae6345a, type: 2}
   - {fileID: 11400000, guid: 437de6a5cc65f9c459177e478397b195, type: 2}
