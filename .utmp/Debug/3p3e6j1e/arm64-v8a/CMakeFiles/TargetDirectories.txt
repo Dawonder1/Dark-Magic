@@ -1,0 +1,5 @@
+C:/Users/omotoso/Dark Magic/.utmp/Debug/3p3e6j1e/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/omotoso/Dark Magic/.utmp/Debug/3p3e6j1e/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/omotoso/Dark Magic/.utmp/Debug/3p3e6j1e/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/omotoso/Dark Magic/.utmp/Debug/3p3e6j1e/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/omotoso/Dark Magic/.utmp/Debug/3p3e6j1e/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

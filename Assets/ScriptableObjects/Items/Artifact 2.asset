@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a975a1279f608488910c31e3462063, type: 3}
   m_Name: Artifact 2
   m_EditorClassIdentifier: 
-  _name: Book of Death
+  _name: Soul Sceptre
   value: 0
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   prefab: {fileID: 0}

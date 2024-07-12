@@ -1,0 +1,9 @@
+# ninja log v5
+149	7427	7424857960961879	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a55f541cd5ac1559
+91	7595	7424857960230392	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e4785e8652552332
+2	7622	7424857962033268	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	5b3c82b4d868e832
+46	7808	7424857965876069	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	aa5b9cf32f6f47e6
+332	7916	7424857964495835	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	78b8765ab0904540
+194	8049	7424857967984825	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	cd4a1150d9873f6b
+22	8177	7424857969682452	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c85b88a64c8c2715
+8179	8831	7424857976366247	C:/Users/omotoso/Dark Magic/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/3p3e6j1e/obj/arm64-v8a/libgame.so	1632c8f4bd8953b5
