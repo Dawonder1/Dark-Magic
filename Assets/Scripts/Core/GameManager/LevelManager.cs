@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
             GameObject WM = Instantiate(waveManagerPrefab);
             WaveManager waveManager = WM.GetComponent<WaveManager>();
             waveManagers.Add(waveManager);
-            Debug.Log(waveManagers.Contains(waveManager));
             waveManager.SetWave(wave);
             waveManager.levelManager = this;
         }

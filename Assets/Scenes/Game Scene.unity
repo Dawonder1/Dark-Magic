@@ -151,9 +151,9 @@ RectTransform:
   - {fileID: 2028033048}
   m_Father: {fileID: 753107138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 90, y: 50}
+  m_AnchorMin: {x: 0.09747917, y: 0.20711702}
+  m_AnchorMax: {x: 0.09747917, y: 0.20711702}
+  m_AnchoredPosition: {x: -97, y: -101}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &301798034
@@ -999,11 +999,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 301798033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028033049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,28 +1054,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 50
+  m_MovementRange: 100
   m_DynamicOriginRange: 100
-  m_ControlPath: <Joystick>/stick
-  m_Behaviour: 0
-  m_UseIsolatedInputActions: 0
+  m_ControlPath: <AndroidJoystick>/stick
+  m_Behaviour: 1
+  m_UseIsolatedInputActions: 1
   m_PointerDownAction:
-    m_Name: 
+    m_Name: Pointer Down
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: ab3ac567-9cec-469b-85f9-ccc7579c7912
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 10a814f1-6313-48c6-9c97-69044f4a36a9
+      m_Path: <AndroidJoystick>/stick/y
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pointer Down
+      m_Flags: 0
     m_Flags: 0
   m_PointerMoveAction:
-    m_Name: 
+    m_Name: Pointer Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 78a991f1-b434-4b52-a54d-5a8d0946112e
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 80bb5cc0-4472-4c77-aab7-be08c3681c83
+      m_Path: <AndroidJoystick>/stick/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pointer Move
+      m_Flags: 0
     m_Flags: 0
 --- !u!1 &2122384151
 GameObject:
@@ -1227,6 +1243,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
       objectReference: {fileID: 0}
@@ -1265,6 +1293,10 @@ PrefabInstance:
     - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9065595962819078598, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
       propertyPath: m_Camera
@@ -1334,10 +1366,6 @@ PrefabInstance:
     - target: {fileID: 8798208209692476107, guid: a748c89ac6b3a2a41823a66494cc917c, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985744468881698146, guid: a748c89ac6b3a2a41823a66494cc917c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

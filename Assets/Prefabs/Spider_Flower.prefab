@@ -461,7 +461,6 @@ GameObject:
   m_Component:
   - component: {fileID: 354980665424510707}
   - component: {fileID: 2282379154733552138}
-  - component: {fileID: 8985744468881698146}
   - component: {fileID: -4619152834690076755}
   - component: {fileID: 4797146635093344726}
   - component: {fileID: -9101864197891167910}
@@ -512,27 +511,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &8985744468881698146
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192921067618121487}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 2.0051842, y: 1, z: 2.1968508}
-  m_Center: {x: 0.0037927628, y: 2.61, z: 0.06722212}
 --- !u!114 &-4619152834690076755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +564,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 68
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!64 &8798208209692476107
 MeshCollider:

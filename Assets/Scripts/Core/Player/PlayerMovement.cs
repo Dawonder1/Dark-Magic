@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(MovementX, 0, MovementY);
         rb.linearVelocity = movement * speed;
 
+        Debug.Log(movement);
+
         if(movement == null) return;
         rotateAngle = Vector3.Angle(transform.up, movement);
         transform.Rotate(Vector3.up, rotateAngle);

@@ -24,7 +24,10 @@ public class Orb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Enemy")) Destroy(gameObject);
-        other.GetComponent<Health>().TakeDamage(damage);
+        if (other.transform.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            other.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }

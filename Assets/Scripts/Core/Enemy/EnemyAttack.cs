@@ -16,7 +16,8 @@ public class EnemyAttack : MonoBehaviour
     Rigidbody rb;
     private void Start()
     {
-        LoadStats();
+        attackRate = enemyStats.stats.attackRate;
+        attackTimer = attackRate;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -26,14 +27,14 @@ public class EnemyAttack : MonoBehaviour
     private void Update()
     {
         float distanceFromPlayer = Vector3.Distance(transform.position, player.position);
-        bool isInAttackRange =  distanceFromPlayer <= attackRange;
-        bool isInVisionRange = distanceFromPlayer <= visionRange;
+        bool isInAttackRange =  distanceFromPlayer <= enemyStats.stats.attackRange;
+        bool isInVisionRange = distanceFromPlayer <= enemyStats.stats.visionRange;
 
         //enemy movement and rotation;
         animator.SetFloat("speed", rb.linearVelocity.magnitude);
         if (player == null || !isInVisionRange) return;
         transform.LookAt(player);
-        rb.linearVelocity = transform.forward * speed;
+        rb.linearVelocity = transform.forward * enemyStats.stats.speed;
 
         if(!isInAttackRange) { return; }
 
@@ -44,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
             return;
         }
         animator.SetTrigger("attack");
-        attackTimer = attackRate;
+        attackTimer = enemyStats.stats.attackRate;
     }
 
     //animation event
@@ -52,18 +53,11 @@ public class EnemyAttack : MonoBehaviour
     {
         //don't damage the player if the player has left attack range
         if (Vector3.Distance(player.position, transform.position) > attackRange) return;
-        player.GetComponent<Health>().TakeDamage(damage);
+        player.GetComponent<Health>().TakeDamage(enemyStats.stats.enemyDamage);
     }
 
     private void LoadStats()
     {
         if (enemyStats == null) { Debug.Log("emptyStats"); return; }
-        attackRate = enemyStats.stats.attackRate;
-        attackTimer = attackRate;
-        attackRange = enemyStats.stats.attackRange;
-        visionRange = enemyStats.stats.visionRange;
-        damage = enemyStats.stats.enemyDamage;
-        speed = enemyStats.stats.speed;
-        Debug.Log("enemy stats loaded");
     }
 }

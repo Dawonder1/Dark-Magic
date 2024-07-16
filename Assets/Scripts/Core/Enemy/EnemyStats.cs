@@ -11,8 +11,8 @@ public struct EnemyStatistics
 {
     public float attackRate;
     public float attackRange;
-    public float visionRange;
     public float speed;
+    public float visionRange;
     public Damage enemyDamage;
     public int maxHealth;
 }
