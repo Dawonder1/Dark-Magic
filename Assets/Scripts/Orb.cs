@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
+    [SerializeField] private float travelSpeed;
     private Transform target;
     public Damage damage;
     public void SetTarget(Transform targetTransform)
@@ -13,7 +14,7 @@ public class Orb : MonoBehaviour
     private void Update()
     {
         if (target == null) return;
-        Vector3 moveVector = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
+        Vector3 moveVector = Vector3.Lerp(transform.position, target.position, travelSpeed);
         transform.position = moveVector;
     }
 
