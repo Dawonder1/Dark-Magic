@@ -15,10 +15,26 @@ MonoBehaviour:
   level: 0
   waves:
   - id: 0
-    enemiesTotal: 4
+    enemiesTotal: 2
+    waveEnemies:
+    - enemyClass: 0
+      numEnemies: 2
+    spawnPosition: {x: 0, y: 0, z: 0}
+    spawnRange: 4.5
+    isComplete: 0
+  - id: 0
+    enemiesTotal: 5
     waveEnemies:
     - enemyClass: 0
       numEnemies: 4
-    spawnPosition: {x: 0, y: 0, z: 0}
+    spawnPosition: {x: 6, y: 0, z: -4}
+    spawnRange: 4.5
+    isComplete: 0
+  - id: 0
+    enemiesTotal: 6
+    waveEnemies:
+    - enemyClass: 0
+      numEnemies: 6
+    spawnPosition: {x: -2, y: 0, z: 7}
     spawnRange: 4.5
     isComplete: 0
