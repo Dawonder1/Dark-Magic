@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    int health;
+    float health;
+    int maxHealth;
+    [SerializeField] Slider healthBar;
     public EnemyStats enemyStats;
     public PlayerStats playerStats;
     public WaveManager waveManager;
@@ -12,8 +15,9 @@ public class Health : MonoBehaviour
     private void Start()
     {
         //if gameobject is an enemy
-        if(CompareTag("Enemy")) health = enemyStats.stats.maxHealth;
-        if(CompareTag("Player")) health = playerStats.playerStats.maxHealth;
+        if(CompareTag("Enemy")) maxHealth = enemyStats.stats.maxHealth;
+        if(CompareTag("Player")) maxHealth = playerStats.playerStats.maxHealth;
+        health = maxHealth;
     }
 
     public void SetWaveManager(WaveManager manager)
@@ -26,6 +30,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(Damage damage)
     {
         health -= damage.value;
+        UpdateHealthBar();
         if(health <= 0)
         {
             Destroy(gameObject);
@@ -36,5 +41,10 @@ public class Health : MonoBehaviour
             }
             OnEnemyKilled();
         }
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.value = health / maxHealth;
     }
 }

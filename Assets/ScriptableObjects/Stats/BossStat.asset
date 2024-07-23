@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8a0c6e381a31b429a1fd3c0d2c9259, type: 3}
-  m_Name: Test Level
+  m_Script: {fileID: 11500000, guid: 3311a6cf2c5a6c3499d27676b6e7cd79, type: 3}
+  m_Name: BossStat
   m_EditorClassIdentifier: 
-  level: 0
-  waves:
-  - id: 0
-    enemiesTotal: 1
-    waveEnemies:
-    - enemyClass: 0
-      numEnemies: 1
-    spawnPosition: {x: 0, y: 0, z: 0}
-    spawnRange: 4.5
-    isComplete: 0
+  stats:
+    attackRate: 0
+    attackRange: 5
+    speed: 2.5
+    visionRange: 10
+    enemyDamage:
+      value: 5
+    maxHealth: 100
