@@ -15,7 +15,7 @@ MonoBehaviour:
   playerStats:
     damage:
       value: 5
-    attackRange: 3
+    attackRange: 10
     maxHealth: 15
   startingStats:
     damage:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     attackRate: 0
-    attackRange: 5
+    attackRange: 7
     speed: 2.5
     visionRange: 10
     enemyDamage:

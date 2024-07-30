@@ -47,4 +47,9 @@ public class Health : MonoBehaviour
     {
         healthBar.value = health / maxHealth;
     }
+
+    private void Stun()
+    {
+        GetComponent<Animator>().SetTrigger("stun");
+    }
 }

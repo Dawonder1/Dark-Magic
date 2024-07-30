@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 2028033050}
   - component: {fileID: 2028033049}
   - component: {fileID: 2028033051}
+  - component: {fileID: 2028033052}
   m_Layer: 5
   m_Name: JoyStick Stick
   m_TagString: Untagged
@@ -1024,9 +1025,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovementRange: 100
   m_DynamicOriginRange: 100
-  m_ControlPath: <AndroidJoystick>/stick
+  m_ControlPath: <Pointer>/delta
   m_Behaviour: 1
-  m_UseIsolatedInputActions: 1
+  m_UseIsolatedInputActions: 0
   m_PointerDownAction:
     m_Name: Pointer Down
     m_Type: 0
@@ -1061,6 +1062,18 @@ MonoBehaviour:
       m_Action: Pointer Move
       m_Flags: 0
     m_Flags: 0
+--- !u!114 &2028033052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028033047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0edb0c5671abed4686326d0b1aec172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2122384151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1230,18 @@ PrefabInstance:
     - target: {fileID: 4086535335505751147, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865800347512789543, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865800347512789543, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865800347512789543, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 6609424252045502750, guid: acfd58e407cbf264c85c322703f81f61, type: 3}
       propertyPath: m_LocalScale.x

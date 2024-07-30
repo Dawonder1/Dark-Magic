@@ -11,7 +11,7 @@ public class PlayerStats : ScriptableObject
     private void OnEnable()
     {
         statsSavePath = Application.persistentDataPath + "/statsSave.txt";
-        LoadPlayerStats();
+        //LoadPlayerStats();
     }
 
     private void SavePlayerStats()
@@ -32,7 +32,7 @@ public class PlayerStats : ScriptableObject
 
     private void OnDisable()
     {
-        SavePlayerStats();
+        //SavePlayerStats();
     }
 }
 
